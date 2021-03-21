@@ -24,12 +24,12 @@ def append_license_to_files(src_directory_location, license_location):
 
 
 def apply_cpp_comments(license_content):
-    commented_license_content = "//"
+    commented_license_content = "// "
     
     for i in range(0, len(license_content), 1):
         commented_license_content += license_content[i]
         if license_content[i] == "\n":
-            commented_license_content += "//"
+            commented_license_content += "// "
 
     commented_license_content += "\n"
     
