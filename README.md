@@ -2,4 +2,4 @@
 
 ![Screenshot](Screenshot.png)
 
- Applies Licences to the Top of Non-ThirdParty Source Files According to the Repository LICENSE File.
+Applies licenses to the top of all source files in a given directory according to a given LICENSE file.
