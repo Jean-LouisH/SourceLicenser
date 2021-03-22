@@ -4,13 +4,13 @@ from distutils.dir_util import copy_tree
 
 src_directory_location = ""
 license_location = ""
-file_patterns = ["*.c", "*.h", "*.cpp", "*.hpp"]
+file_patterns = ["*.c", "*.h", "*.cpp", "*.hpp", "*.cs", ".java"]
 
 def prepend_license_to_files(src_directory_location, license_location):
 
     license_f = open(license_location, 'r')
     license_content = license_f.read()
-    commented_license_content = apply_c_style_comments(license_content)
+    commented_license_content = apply_c_style_inline_comments(license_content)
 
     for path, dirs, files in os.walk(os.path.abspath(src_directory_location)):
         for i in file_patterns:
@@ -23,7 +23,7 @@ def prepend_license_to_files(src_directory_location, license_location):
                     f.write(commented_license_content + '\n' + src_content)
 
 
-def apply_c_style_comments(license_content):
+def apply_c_style_inline_comments(license_content):
     commented_license_content = "// "
     
     for i in range(0, len(license_content), 1):
